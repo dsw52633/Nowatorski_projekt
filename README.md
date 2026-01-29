@@ -1,23 +1,34 @@
-## Instrukcja uruchomienia projektu<br>
-Aplikacja jest w pełni skonteneryzowana. Do jej uruchomienia wymagany jest jedynie zainstalowany Docker.<br>
-Sklonuj repozytorium na dysk lokalny:<br>
-Bash:<br>
-__git clone 
-__cd Nowatorski_Projekt_Ind__<br>
-Projekt wykorzystuje Docker Compose do orkiestracji serwisu aplikacji (FastAPI) oraz bazy danych (PostgreSQL). Aby zbudować i uruchomić środowisko w tle, wpisz:<br>
-Bash:<br>
-__docker compose up -d –-build__<br>
+# Nowatorski Projekt Indywidualny – Study Tasks API
 
-Po uruchomieniu aplikacja jest dostępna pod adresem: http://localhost:8000<br>
+Projekt wykonany w ramach przedmiotu **Nowatorski Projekt Indywidualny**.  
+Celem projektu było zaprojektowanie i wdrożenie środowiska DevOps umożliwiającego
+budowanie, testowanie oraz uruchamianie aplikacji API w sposób zautomatyzowany.
 
-Dostępne punkty końcowe (Endpoints):
-- Dokumentacja API: http://localhost:8000/docs – tu można ręcznie testować endpointy.
-- Status aplikacji:  http://localhost:8000/
-- Test połączenia z bazą danych: http://localhost:8000/health-db – sprawdza czy kontener Python widzi kontener PostgreSQL.<br>
+## Opis projektu
+Aplikacja **Study Tasks API** umożliwia zarządzanie zadaniami związanymi z nauką.
+Dane aplikacji są przechowywane w bazie danych PostgreSQL, a całość jest uruchamiana
+w środowisku kontenerowym.
 
-Testy integracyjne są wykonywane wewnątrz kontenera, aby uruchomić testy ręcznie:<br>
-Bash:<br>
-__docker compose exec web pytest__<br>
-Aby zatrzymać kontenery i zwolnić zasoby:<br>
-Bash:<br>
-__docker compose down__
+Projekt demonstruje wykorzystanie narzędzi DevOps takich jak Docker, Docker Compose
+oraz GitHub Actions.
+
+## Wykorzystane technologie
+- Python + FastAPI
+- Docker (multi-stage Dockerfile)
+- Docker Compose (aplikacja + baza danych)
+- PostgreSQL
+- GitHub Actions (Continuous Integration)
+- Pytest
+
+## Uruchomienie projektu
+Wymagane: Docker oraz Docker Compose.
+
+```bash
+git clone https://github.com/dsw52633/Nowatorski_projekt.git
+cd Nowatorski_projekt
+docker compose up -d --build
+Po uruchomieniu aplikacja dostępna jest pod adresem:
+
+http://localhost:8000
+
+Dokumentacja API (Swagger): http://localhost:8000/docs
