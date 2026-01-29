@@ -70,3 +70,4 @@ def health_db():
         return {"status": "Database connected successfully!"}
     except Exception as e:
         return {"status": "Database connection failed", "error": str(e)}
+
