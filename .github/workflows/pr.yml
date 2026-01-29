@@ -7,4 +7,5 @@ on:
 jobs:
   call-reusable-pipeline:
     uses: ./.github/workflows/ci-pipeline.yml
-    secrets: inherit
+    with:
+      run_push: false
