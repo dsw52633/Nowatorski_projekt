@@ -1,0 +1,11 @@
+name: PR - Tests
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  tests:
+    uses: ./.github/workflows/ci-pipeline.yml
+    with:
+      run_push: false
