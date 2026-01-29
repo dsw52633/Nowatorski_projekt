@@ -19,6 +19,20 @@ oraz GitHub Actions.
 - PostgreSQL
 - GitHub Actions (Continuous Integration)
 - Pytest
+- 
+## CI/CD
+
+Projekt wykorzystuje GitHub Actions do automatycznego:
+- budowania aplikacji w Dockerze
+- uruchamiania środowiska z Docker Compose
+- wykonywania testów automatycznych (pytest)
+
+Pipeline CI uruchamiany jest:
+- przy każdym push do gałęzi `main`
+- przy Pull Requestach
+
+Zastosowano reusable workflow dla czytelności i ponownego użycia.
+
 
 ## Uruchomienie projektu
 Wymagane: Docker oraz Docker Compose.
