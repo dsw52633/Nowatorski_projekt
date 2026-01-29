@@ -3,12 +3,12 @@ name: Reusable CI/CD Pipeline
 # reusable workflow
 on:
   workflow_call:
-    # sekrety
-    secrets:
-      DOCKER_USERNAME:
-        required: true
-      DOCKER_PASSWORD:
-        required: true
+    inputs:
+      run_push:
+        type: boolean
+        required: false
+        default: false
+
 
 jobs:
   build-test-publish:
