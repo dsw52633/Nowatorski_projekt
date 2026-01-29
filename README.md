@@ -2,7 +2,7 @@
 Aplikacja jest w pełni skonteneryzowana. Do jej uruchomienia wymagany jest jedynie zainstalowany Docker.<br>
 Sklonuj repozytorium na dysk lokalny:<br>
 Bash:<br>
-__git clone https://github.com/Pablo1-22/Nowatorski_Projekt_Ind.git__<br>
+__git clone 
 __cd Nowatorski_Projekt_Ind__<br>
 Projekt wykorzystuje Docker Compose do orkiestracji serwisu aplikacji (FastAPI) oraz bazy danych (PostgreSQL). Aby zbudować i uruchomić środowisko w tle, wpisz:<br>
 Bash:<br>
