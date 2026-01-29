@@ -1,11 +1,10 @@
-name: PR - Tests
+name: Pull Request Trigger
 
 on:
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  tests:
+  call-reusable-pipeline:
     uses: ./.github/workflows/ci-pipeline.yml
-    with:
-      run_push: false
+    secrets: inherit
