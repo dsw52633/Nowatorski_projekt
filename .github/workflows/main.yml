@@ -3,13 +3,9 @@ name: Main Trigger
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  # zadanie, które wywołuje reusable workflow
   call-reusable-pipeline:
     uses: ./.github/workflows/ci-pipeline.yml
-    
-    # przekaż wszystkie sekrety automatycznie
-    secrets: inherit
+    with:
+      run_push: false
