@@ -1,0 +1,24 @@
+name: 'Sprawdzanie plików projektu'
+description: 'Prosta własna akcja sprawdzająca czy plik README istnieje'
+inputs:
+  file_to_check:
+    description: 'Nazwa pliku do sprawdzenia'
+    required: true
+    default: 'README.md'
+outputs:
+  result:
+    description: 'Wynik sprawdzenia'
+runs:
+  using: "composite"
+  steps:
+    - name: Sprawdź plik
+      shell: bash
+      run: |
+        if [ -f "${{ inputs.file_to_check }}" ]; then
+          echo "Plik ${{ inputs.file_to_check }} istnieje!"
+          echo "exists=true" >> $GITHUB_OUTPUT
+        else
+          echo "Błąd: Plik ${{ inputs.file_to_check }} nie istnieje!"
+          echo "exists=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
