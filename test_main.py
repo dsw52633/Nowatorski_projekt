@@ -6,7 +6,7 @@ client = TestClient(app)
 def test_read_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Aplikacja DevOps działa!"}
+    assert response.json() == {"message": "Study Tasks API działa!"}
 
 def test_create_task():
     response = client.post("/tasks", json={"name": "Test DevOps"})
