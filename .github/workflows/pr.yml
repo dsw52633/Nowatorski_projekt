@@ -1,0 +1,10 @@
+name: Pull Request Trigger
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  call-reusable-pipeline:
+    uses: ./.github/workflows/ci-pipeline.yml
+    secrets: inherit
